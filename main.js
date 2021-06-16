@@ -106,7 +106,7 @@ function playRound(playerSelection, computerSelection) {
     }
     
 
-    // 		return: win from who - result
+    
     // 	for result from the function that plays one round adds one point to player, computer or nooone
     if (resultRound == "You won this round.") {
                 playerPoints = playerPoints +1;
