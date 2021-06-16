@@ -106,12 +106,12 @@ function playRound(playerSelection, computerSelection) {
     }
     
 
-    
-    // 	for result from the function that plays one round adds one point to player, computer or nooone
+    //  condition that adds point per round
+    // 	for result from the function that plays one round adds one point to player 
     if (resultRound == "You won this round.") {
                 playerPoints = playerPoints +1;
 
-                    // condition in condition that makes different answers if you lost or won and the points that changed this round
+                    // condition in condition that makes different answers for the points that changed this round (1-5 points + error)
                     if (playerPoints == 1) {
                         playerPointsAnswer = `Nice. You won your first round. ${playerSelection} beats ${computerSelection}`;
                         console.log(playerPointsAnswer);
@@ -142,10 +142,12 @@ function playRound(playerSelection, computerSelection) {
                         console.log("There must have been an error!");
                     }
     }
+
+    //  for result from the function that plays one round adds one point to computer
     else if (resultRound == "You lost this round.") {
                 computerPoints = computerPoints +1;
 
-                // condition in condition that makes different answers if you lost or won and the points that changed this round
+                // condition in condition that makes different answers for the points that changed this round (1-5 points + error)
                 if (computerPoints == 1) {
                     computerPointsAnswer = `Bad luck. Try again. ${computerSelection} beats ${playerSelection}`;
                     console.log(computerPointsAnswer);
@@ -176,10 +178,12 @@ function playRound(playerSelection, computerSelection) {
                 }
     }
 
+    //  if the condition who wins one round says error: error message
     else if (resultRound == "There was an error.") {
         console.log("There was a bad error. Please fix it.");
     }
 
+    //  else it is a draw
     else {
         console.log(`It was a draw. ${computerSelection} ties ${playerSelection}`)
     

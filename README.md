@@ -55,12 +55,12 @@ Function that plays one round of the game
 		
   			error message
  
-
-	for result from the function that plays one round adds one point to player: condition 
+	condition that adds point per round
+	for result from the function that plays one round adds one point to player 
  
 		condition in condition that makes different answers for 				the points that changed this round (1-5 points + error)
                     
-   	one point to Computer
+   	for result from the function that plays one round adds one point to computer
    	
 		 condition in condition that makes different answers for 				the points that changed this round (1-5 points + error)
 	
