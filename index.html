@@ -5,20 +5,96 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock paper scissors</title>
-        <!-- <script src="verusuch 1.js"></script> -->
-    <!-- <script src="versuch 2.js"> </script> -->
-    <!-- <script>
-        console.log("hello world");
-    </script> -->
-    <script src="main.js"> </script>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
+<nav class="Navigation">
+    <div class="Navigation_container">
+        <div class="Navigation_Icon">
+            
+        </div>
+        <div class="Navigation_Title">
+            <div class="Navigation_Title_Item Navigation_Title_Rock">Rock</div>
+            <div class="Navigation_Title_Item Navigation_Title_Paper">Paper</div>
+            <div class="Navigation_Title_Item Navigation_Title_Scissors">Scissors</div>  
+        </div>
+        <div class="Navigation_leer">
+
+        </div>
+    </div>
+</nav>
+<div class="StartGame_container">
     
+     <button class="StartGame_Button">Let's play a Game!</button>
+    
+</div>
+
+<div class="Score">
+    
+    <div class="Score_You">
+        <div class="Score_You_Title Score_Title">
+            You
+        </div>
+        <div class="Score_You_Points Score_Points">
+            0
+        </div>
+    </div>
+    <div class="Score_Title">Score:</div>
+    <div class="Score_PC">
+        <div class="Score_PC_Title Score_Title">
+        Enemy
+        </div>
+        <div class="Score_PC_Points Score_Points">
+            0
+        </div>
+    </div>
+</div>
+
+<div class="Cards Cards_noEffect ">
+    <div class="Item Rock">
+        <div class="Item_Title Rock_Title">
+            Rock:
+        </div>
+        <img class="Image Image_Rock" src="images/Stein-ohneAbstand.jpg">
+    </div>
+    <div class="Item Paper">
+        <div class="Item_Title Paper_Title">
+            Paper:
+        </div>
+        <img class="Image Image_Paper" src="images/paper-ohneAbstand.jpg">
+    </div>
+    <div class="Item Scissors">
+        <div class="Item_Title Scissors_Title">
+            Scissors:
+        </div>
+        <img class="Image Image_Scissors" src="images/schere-ohneAbstand.jpg">
+    </div>
+    
+</div>
+
+
+<div class="ResultRound_Text">
+
+</div>
+<button class="Next_Round_Button">Next Round</button>
+
+
+<div class="Champion_Container">
+    <img class="Pokal" src="images/pokal.png">
+</div>
+<div class="Defeat_Container">
+    <img class="Defeat" src="images/lost.png">
+</div>
+
+<footer class="Footer">
+
+</footer>
 
 
 
-    <!-- <script>
-        console.log("hello World!");
-    </script> -->
+
+<script src="main2.js"> </script>
 </body>
 </html>
