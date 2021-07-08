@@ -10,8 +10,11 @@
     let choseRockButton = document.querySelector(".Image_Rock");
     let choseScissorsButton = document.querySelector(".Image_Scissors");
     let chosePaperButton = document.querySelector(".Image_Paper");
-    // Variable ResultRound
+    // Variable ResultRound ResultRound Yhoices
     let ResultRound = document.querySelector(".ResultRound_Text");
+    let ResultRoundImages = document.querySelector(".ResultRound_Images");
+    let ResultRoundImagePlayer = document.querySelector(".ResultRound_Player");
+    let ResultRoundImageEnemy = document.querySelector(".ResultRound_Enemy");
     // Variable NextRound Button
     let NextRound_Button = document.querySelector(".Next_Round_Button"); 
     // Variable Score
@@ -20,8 +23,9 @@
     //Variable GameEnd
     let VictoryImage = document.querySelector(".Champion_Container");
     let DefeatImage = document.querySelector(".Defeat_Container");
-
-
+    //Variable Refresh Page
+    let Refresh = document.querySelector(".AnotherGame");
+    let RefreshDefeat = document.querySelector(".AnotherGame2");
     //  randomNumber for ComputerPlay
     let randomNumber = 0;
     //    console.log(randomNumber);
@@ -69,24 +73,24 @@
         function displayStartGameButton() {
             
             startGameButton.classList.add("StartGame_container_hidden");
-        }, 1500);
+        }, 750);
     });
 
 function displayCards() {
     setTimeout(
         function showCards() {
             cardsVisibility.classList.add("Cards_visible");
-        }, 1500
+        }, 750
     )
     setTimeout(
         function positionCards() {
             cardsVisibility.classList.remove("Cards_noEffect");
-        }, 1500
+        }, 750
     )
     setTimeout(
         function positionCardsStatic() {
             cardsVisibility.classList.add("Cards_rightPosition");
-        }, 1500
+        }, 750
     )
 }
 
@@ -97,7 +101,7 @@ function displayCards() {
         setTimeout(
             function showScore() {
                 scoreVisibility.classList.add("Score_visible");
-            }, 1500
+            }, 750
 
         )
        
@@ -213,28 +217,28 @@ function playRound(playerSelection, computerSelection) {
 
                     // condition in condition that makes different answers for the points that changed this round (1-5 points + error)
                     if (playerPoints == 1) {
-                        playerPointsAnswer = `Nice. You won your first round. ${playerSelection} beats ${computerSelection}`;
+                        playerPointsAnswer = `Nice. You won your first round.`;
                         console.log(playerPointsAnswer);
                     }
 
                     else if (playerPoints == 2) {
-                        playerPointsAnswer = `Very good. You are on the right track. ${playerSelection} beats ${computerSelection}`;
+                        playerPointsAnswer = `Very good. You are on the right track.`;
                         console.log(playerPointsAnswer);
                     }
 
                     else if (playerPoints == 3) {
-                        playerPointsAnswer = `This round is also yours. ${playerSelection} beats ${computerSelection}`;
+                        playerPointsAnswer = `This round is also yours.`;
                         console.log(playerPointsAnswer);
                         
                     }
 
                     else if (playerPoints == 4) {
-                        playerPointsAnswer = `You won. One more win and the victory is yours. ${playerSelection} beats ${computerSelection}`;
+                        playerPointsAnswer = `You won. One more win and the victory is yours.`;
                         console.log(playerPointsAnswer);
                     }
 
                     else if (playerPoints == 5) {
-                        playerPointsAnswer = `You are the champion. Congratulations! ${playerSelection} beats ${computerSelection}`;
+                        playerPointsAnswer = `You are the champion.`;
                         console.log(playerPointsAnswer);
                     }
 
@@ -249,27 +253,27 @@ function playRound(playerSelection, computerSelection) {
 
                 // condition in condition that makes different answers for the points that changed this round (1-5 points + error)
                 if (computerPoints == 1) {
-                    computerPointsAnswer = `Bad luck. Try again. ${computerSelection} beats ${playerSelection}`;
+                    computerPointsAnswer = `Bad luck. Try again.`;
                     console.log(computerPointsAnswer);
                 }
 
                 else if (computerPoints == 2) {
-                    computerPointsAnswer = `You lost this round. ${computerSelection} beats ${playerSelection}`;
+                    computerPointsAnswer = `You lost this round.`;
                     console.log(computerPointsAnswer);
                 }
 
                 else if (computerPoints == 3) {
-                    computerPointsAnswer = `You can do better. ${computerSelection} beats ${playerSelection}`;
+                    computerPointsAnswer = `You can do better.`;
                     console.log(computerPointsAnswer);
                 }
 
                 else if (computerPoints == 4) {
-                    computerPointsAnswer = `Oops. Don't lose again. ${computerSelection} beats ${playerSelection}`;
+                    computerPointsAnswer = `Oops. Don't lose again.`;
                     console.log(computerPointsAnswer);
                 }
 
                 else if (computerPoints == 5) {
-                    computerPointsAnswer = `Oh no. Your enemy is the champion. ${computerSelection} beats ${playerSelection}. Play another game.`;
+                    computerPointsAnswer = `Oh no. Your enemy is the champion.`;
                     console.log(computerPointsAnswer);
                 }
 
@@ -304,7 +308,7 @@ function playRound(playerSelection, computerSelection) {
         setTimeout(
             function CardsNoEffect() {
                 cardsVisibility.classList.add("Cards_noEffect"); 
-            }, 1500)
+            }, 750)
         }
     
     function showResultRound() {
@@ -313,21 +317,66 @@ function playRound(playerSelection, computerSelection) {
         function showResultRoundBox() {
             ResultRound.classList.add("ResultRound_Text_show");
             ResultRound.classList.add("ResultRound_Text_transitionshow");
-        }, 1500);
-    
+        }, 750);
+        
         setTimeout(
-        function showResultRoundText() {
-            
-            if(resultRound == "You won this round.") 
-            {ResultRound.innerHTML = playerPointsAnswer;}
-
-            else if(resultRound == "You lost this round.") 
-            {ResultRound.innerHTML = computerPointsAnswer;}
-
-            else
-            ResultRound.innerHTML = `It was a draw. ${computerSelection} ties ${playerSelection}`;
-        }, 1500);
+            function showResultRoundText() {
+                
+                if(resultRound == "You won this round.") 
+                {ResultRound.innerHTML = playerPointsAnswer;}
+    
+                else if(resultRound == "You lost this round.") 
+                {ResultRound.innerHTML = computerPointsAnswer;}
+    
+                else
+                ResultRound.innerHTML = `It was a draw.`;
+            }, 750);
     }
+    
+    function showResultImagePlayer() {
+        if(playerSelection == "rock") {
+            ResultRoundImagePlayer.innerHTML = "<img src='images/Stein3.png'>"
+        }
+        else if(playerSelection == "paper") {
+            ResultRoundImagePlayer.innerHTML = "<img src='images/Papier3.png'>"
+        }
+        else if (playerSelection == "scissors") {
+            ResultRoundImagePlayer.innerHTML = "<img src='images/Schere3.png'>"
+        }
+        else
+        return;
+    }
+
+    function showResultImageEnemey() {
+        if(computerSelection == "rock") {
+            ResultRoundImageEnemy.innerHTML = "<img src='images/Stein3.png'>"
+        }
+        else if(computerSelection == "paper") {
+            ResultRoundImageEnemy.innerHTML = "<img src='images/Papier3.png'>"
+        }
+        else if(computerSelection == "scissors") {
+            ResultRoundImageEnemy.innerHTML = "<img src='images/Schere3.png'>"
+        }
+        else
+        return;
+    }
+
+    function showResultImages() {
+        if ((computerPoints < 5) && (playerPoints <5)) {
+        setTimeout(
+            function showResultImageBox() {
+                ResultRoundImages.classList.add("ResultRound_Images_show");
+                ResultRoundImages.classList.add("ResultRound_Images_transitionshow")
+            
+            showResultImagePlayer();
+            showResultImageEnemey();   
+            }, 750);
+        }
+        else 
+        return;
+    }
+       
+    
 
     function showActualScore() {
         
@@ -340,7 +389,7 @@ function playRound(playerSelection, computerSelection) {
             ComputerScore.innerHTML = `${computerPoints}`;
         }
         else
-        return;}, 2000)
+        return;}, 950)
     };
 
 
@@ -349,7 +398,7 @@ function playRound(playerSelection, computerSelection) {
         function showNextRoundButton() {
             NextRound_Button.classList.add("Next_Round_Button_show");
             NextRound_Button.classList.add("Next_Round_Button_transitionshow");
-        }, 1500);
+        }, 750);
     }
 
     function showVictoryScreen () {
@@ -357,15 +406,15 @@ function playRound(playerSelection, computerSelection) {
             function showVictory() {
                 VictoryImage.classList.add("Champion_show");
                 VictoryImage.classList.add("Champion_Transitionshow");
-            }, 1500);
+            }, 750);
     }
 
-    function showDefeatScreen () {
+    function showDefeatScreen() {
         setTimeout(
             function showDefeat () {
                 DefeatImage.classList.add("Defeat_show");
                 DefeatImage.classList.add("Defeat_Transitionshow");
-            }, 1500);
+            }, 750);
     }
 
     const generateComputerAnswer = document.querySelectorAll('.Image');
@@ -378,11 +427,13 @@ function playRound(playerSelection, computerSelection) {
             
             playRound(playerSelection, computerSelection);
             showResultRound();
+            showResultImages();
             showActualScore();
+            
             if((computerPoints < 5) && (playerPoints <5)) {
             showNextRound();}
             else if (computerPoints == 5) {
-
+                showDefeatScreen()
             }
             else if (playerPoints == 5) {
                 showVictoryScreen();
@@ -396,7 +447,7 @@ function playRound(playerSelection, computerSelection) {
         
         setTimeout (
         function NextRoundButtonPosition() {
-            NextRound_Button.classList.remove("Next_Round_Button_show")}, 1500)
+            NextRound_Button.classList.remove("Next_Round_Button_show")}, 750)
     };
 
     function removeResultRound() {
@@ -404,7 +455,16 @@ function playRound(playerSelection, computerSelection) {
 
         setTimeout(
         function ResultRoundPosition() {
-            ResultRound.classList.remove("ResultRound_Text_show")}, 1500)
+            ResultRound.classList.remove("ResultRound_Text_show")}, 750)
+    };
+
+    function removeRoundImages() {
+        ResultRoundImages.classList.remove("ResultRound_Images_transitionshow");
+
+        setTimeout (
+        function RoundImagesPosition() {
+            ResultRoundImages.classList.remove("ResultRound_Images_show")
+        }, 750)
     };
 
     const AnimationAfterClickNextRound = document.querySelector('.Next_Round_Button');
@@ -412,6 +472,16 @@ function playRound(playerSelection, computerSelection) {
         displayCards()
         removeNextRoundButton();
         removeResultRound();
+        removeRoundImages();
     });
   
 
+    const StartNewGame = document.querySelector('.AnotherGame');
+    StartNewGame.addEventListener('click', () => {
+        window.location.reload();
+    });
+
+    const StartGameAfterDefeat = document.querySelector('.AnotherGame2');
+    StartGameAfterDefeat.addEventListener('click', () => {
+        window.location.reload();
+    });

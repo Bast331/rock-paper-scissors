@@ -1,59 +1,104 @@
+/* BackgroundImage of whole page*/
 html {
-    height: 100%;
+    /* min-height: 100%; */
+    min-height: 100vh;
+    background-image: url(images/background3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
+
+/*Arrangement of page: nav-main-footer*/
 body {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    /* min-height: 100%; */
+    min-height: 100vh;
     justify-content: space-between;
+    font-family: 'Indie Flower',sans-serif;
+    /* cursor: url("images/Cursor1.png"), auto; */
+    cursor: url("images/Cursor2.png"), auto;
 }
+
+/*Navigation: */
 .Navigation_container {
-    display: flex;
-    margin-top: 5px;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin: 2rem auto 3rem auto;
+    width: 36.9rem;
     height: 4rem;
-    justify-content: space-between;
-    
-}
-.Navigation_Icon {
-    border: 3px solid black;
-    border-radius: 50%;
-    height: 3rem;
-    width: 3rem;
-    align-self: center;
-    
-    /*margin-right: 5rem;*/
 }
 
+    /* Navigation Title - neon Animation*/
 .Navigation_Title {
-    display: flex;
-    align-self: center;
-   
+    color: #fff;
+    font-size: 4rem;
+    font-weight: 600;
+    animation: pulsateTitle 2.5s infinite alternate;
+    margin: 0 auto;
 }
 
-.Navigation_Title_Item {
-    margin-right: 1rem;
-    margin-left: 1rem;
+@keyframes pulsateTitle {
+    100% {
+        text-shadow: 
+        0 0 4px #fff,
+        0 0 11px #bbf6fa,
+        0 0 19px #7df3fa,
+        0 0 40px #7df3fa,
+        0 0 80px #04ecfa,
+        0 0 90px #04ecfa,
+        0 0 100px #04ecfa,
+        0 0 150px #04ecfa
+        ;
+    }
+    0% {
+        text-shadow: 
+        0 0 2px #fff,
+        0 0 4px #bbf6fa,
+        0 0 6px #7df3fa,
+        0 0 10px #7df3fa,
+        0 0 45px #04ecfa,
+        0 0 55px #04ecfa,
+        0 0 70px #04ecfa,
+        0 0 80px #04ecfa
+        ;
+    }
 }
 
-.Navigation_leer {
-    width:  3rem;
-    height: 3rem;
-    align-self: center;
-    border: 3px solid white;
-    border-radius: 50%;
-}
-
+/*StartGame Button (Transition-disapear)*/
 .StartGame_container{
     width: auto;
     margin: 0 auto;
     height: 2rem;
     display: flex;
     align-items: center;
-    transition: all 1s ease;
+    transition: all 0.75s ease;
+    cursor: url("images/CursorHover.png"), auto;
+}
+    /*Button: transition-neon*/
+.Start_game_Button {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 600;
+    /* cursor: pointer; */
+    transition: all 0.75s ease;
 }
 
+.Start_game_Button:hover {
+    text-shadow: 
+        0 0 4px #fff,
+        0 0 11px #bbf6fa,
+        0 0 19px #7df3fa,
+        0 0 40px #7df3fa,
+        0 0 80px #04ecfa,
+        0 0 90px #04ecfa,
+        0 0 100px #04ecfa,
+        0 0 150px #04ecfa
+        ;
+        cursor: url("images/CursorHover.png"), auto;
+        transform: scale(1.1);
+}
+/*Button disappear*/
 .StartGame_container_transitionHidden {
     opacity: 0;
 }
@@ -62,34 +107,74 @@ body {
     display: none;
 }
 
+/*Score not visible - appear*/
 .Score {
     visibility: hidden;
     opacity: 0;
     position: absolute;
     display: flex;
-    justify-content: space-between;
-    transition: all 1s ease;
-    margin-right: 15rem;
-    margin-left: 15rem;
+    justify-content: center;
+    transition: all 0.75s ease;
+    max-width: 40rem;
+    margin: 0 auto;
+    font-size: 2rem;
+    font-weight: 400;
 }
 
 .Score_visible {
     visibility: visible;
-    position: fixed;
+    /* position: fixed; */
     left: 0;
     right: 0;
-    top: 10rem;
-   
+    top: 15rem;
     opacity: 1;
+    color: #fff;
 }
 
+    /* Score elements own styling*/
+.Score_Score {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.Score_Title {
+    margin-top: 1.25rem;
+}
+
+.Score_You {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 8rem;
+    margin-left: 8rem;
+}
+
+.Score_PC {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 8rem;
+    margin-left: 8rem;
+}
+
+.Score_Points {
+    width: 1rem;
+    font-size: 2.5rem;
+}
+
+.Score_Mobile {
+    display: none;
+}
+
+/* Cards hidde - appear*/
 .Cards {
     opacity: 0;
     visibility: hidden;
     display: flex;
     justify-content: space-around;
-    transition: all 1s ease;
-    margin-top: 10rem;
+    transition: all 0.75s ease;
+    margin-top: 14rem;
 }
 
 .Cards_visible {
@@ -105,29 +190,48 @@ body {
     position: static;
 }
 
+.Item_Title {
+    font-size: 2.25rem;
+    font-weight: 400;
+    color: #fff;
+}
+
+.Item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Images of Cards*/
 .Image {
 height: 100px; 
 width: 150px;
-border: 3px solid black;
-border-radius: 5px;
+margin-top: 0.75rem;
 }
 
 .Image:hover {
-    cursor: pointer;
-    transform: scale(1.1);
+    transform: scale(1.2);
+    cursor: url("images/CursorHover.png"), auto;
 }
 
+
+
+
+/* Result Text: hidden - appear*/
 .ResultRound_Text {
     position:absolute;
     opacity: 0;
     visibility: hidden;
-    transition: all 1s ease;
+    transition: all 0.75s ease;
     width: auto;
     margin: 0 auto;
     height: 2rem;
-    border: 3px solid black;
-    border-radius: 5px;
-    margin-top: 10rem;
+    margin-top: 13rem; 
+    color: #fff;
+    font-weight: 400;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    
 }
 
 .ResultRound_Text_transitionshow {
@@ -139,17 +243,82 @@ border-radius: 5px;
     position: static;
 }
 
+.ResultRound_Images {
+    max-width: 40rem;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.75s ease;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+.ResultRound_Images_transitionshow {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ResultRound_Images_show {
+    position: static;
+}
+
+.ResultRound_Player {
+    height: 100px;
+    width: 150px;
+    margin-right: 8rem;
+    margin-left: 8rem;
+}
+
+.ResultRound_Enemy {
+    height: 100px;
+    width: 150px;
+    margin-right: 8rem;
+    margin-left: 8rem;
+}
+
+
+/* Next Round Button - hidden - appear*/
 .Next_Round_Button {
     width: auto;
     margin: 0 auto;
     height: 2rem;
     display: flex;
     align-items: center;
-    transition: all 1s ease;
+    transition: all 0.75s ease;
     opacity: 0;
     visibility: hidden;
     position: absolute;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
 }
+
+.Next_Round_Button:hover {
+    text-shadow: 
+    0 0 4px #fff,
+    0 0 11px #bbf6fa,
+    0 0 19px #7df3fa,
+    0 0 40px #7df3fa,
+    0 0 80px #04ecfa,
+    0 0 90px #04ecfa,
+    0 0 100px #04ecfa,
+    0 0 150px #04ecfa
+    ;
+    cursor: url("images/CursorHover.png"), auto;
+}
+
 .Next_Round_Button_transitionshow {
     opacity: 1;
     visibility: visible;
@@ -159,13 +328,22 @@ border-radius: 5px;
     position: static;
 }
 
+.Next_Round_Button:hover {
+    transform: scale(1.1);
+    cursor: url("images/CursorHover.png"), auto;
+}
+
+/* Result: Champion: hidden - appear*/
 .Champion_Container {
     margin: 0 auto;
     height: 150px;
-    transition: all 1s ease;
+    transition: all 0.75s ease;
     opacity: 0;
     visibility: hidden;
     position: absolute;
+    display: flex;
+    flex-direction: column;
+   margin-top: -2rem;
 }
 
 .Champion_Transitionshow {
@@ -177,13 +355,29 @@ border-radius: 5px;
     position: static;
 }
 
+.Pokal {
+    height: 150px;
+    width: 150px;
+    margin: 0 auto;
+}
+
+.Defeat {
+    height: 150px;
+    width: 150px;
+    margin: 0 auto;
+    filter: invert(100%);
+}
+
+/* Result: Defeat: hidden - appear*/
 .Defeat_Container {
     margin: 0 auto;
     height: 150px;
-    transition: all 1s ease;
+    transition: all 0.75s ease;
     opacity: 0;
     visibility: hidden;
     position: absolute;
+    display: flex;
+    flex-direction: column;
 }
 
 .Defeat_Transitionshow {
@@ -195,7 +389,184 @@ border-radius: 5px;
     position: static;
 }
 
+.AnotherGame {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.75s ease;
+    margin-top: 2rem;
+    
+}
+
+.AnotherGame:hover {
+    text-shadow: 
+    0 0 4px #fff,
+    0 0 11px #bbf6fa,
+    0 0 19px #7df3fa,
+    0 0 40px #7df3fa,
+    0 0 80px #04ecfa,
+    0 0 90px #04ecfa,
+    0 0 100px #04ecfa,
+    0 0 150px #04ecfa
+    ;
+    cursor: url("images/CursorHover.png"), auto;
+    transform: scale(1.1);
+}
+
+.AnotherGame2 {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.75s ease;
+    margin-top: 2rem;
+    
+}
+
+.AnotherGame2:hover {
+    text-shadow: 
+    0 0 4px #fff,
+    0 0 11px #bbf6fa,
+    0 0 19px #7df3fa,
+    0 0 40px #7df3fa,
+    0 0 80px #04ecfa,
+    0 0 90px #04ecfa,
+    0 0 100px #04ecfa,
+    0 0 150px #04ecfa
+    ;
+    cursor: url("images/CursorHover.png"), auto;
+    transform: scale(1.1);
+}
+
+
+/* Footer: that main is in middle (same height as navigation + margin*/
 .Footer {
-    height: 4rem;
-    margin-top: 5px;
+    height: 6rem;
+    margin-top: 3rem;
+    cursor: url("images/Cursor2.png"), auto;
+}
+
+/* Mobile */
+@media (max-width: 680px) {
+    body  {
+        font-size: 1.5rem;
+    }
+
+    .Navigation_container {
+        margin-bottom: 0;
+        justify-content: center;
+        width: auto;
+    }
+    
+    .Navigation_Title {
+        font-size: 2.5rem;
+        width: 23.1rem;
+    }
+
+    .Score {
+        flex-direction: column;
+        font-size: 1.5rem;    
+    }
+
+    .Score_visible {
+        position: static;
+        margin-top: 3rem;
+    }
+
+    .Score_Mobile {
+    font-size: 2rem;
+    font-weight: 600;
+    text-decoration: underline;
+    width: auto;
+    margin: 0 auto;
+    display: inline;
+    }
+
+    .Score_Score {
+        display: none;
+    }
+
+    .Score_You {
+        flex-direction: row;
+        margin: 0 auto;
+    }
+
+    .Score_You_Title {
+        margin-top: 0;
+        margin-right: 2rem;
+    }
+
+    .Score_PC_Title {
+        margin-top: 0;
+        margin-right: 2rem;
+    }
+
+    .Score_PC {
+        flex-direction: row;
+        margin: 0 auto;
+    }
+
+    .Cards {
+        flex-direction: column;
+        margin-top: 3rem;
+        
+    }
+    .Item_Title {
+        font-size: 1.75rem;
+    }
+
+    .Image {
+        height: 75px;
+        width: 112.5px;
+        margin-bottom: 2rem;
+    }
+
+    .Image:hover {
+        transform: scale(1.1);
+    }
+
+    .ResultRound_Text {
+        margin: 0 auto;
+        height: 2rem;
+        margin-top: 2rem; 
+        color: #fff;
+        font-style: italic;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+
+.ResultRound_Images {
+    /* max-width: 40rem; */
+    width: auto;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 2.5rem;
+}
+
+.ResultRound_Player {
+    height: 75px;
+    width: 112.5px;
+    margin-right: 0rem;
+    margin-left: 0rem;
+}
+
+.ResultRound_Enemy {
+    height: 75px;
+    width: 112.5px;
+    margin-right: 0rem;
+    margin-left: 0rem;
+}
+
+    .Footer {
+        height: 3rem;
+        margin-top:0;
+    }
 }

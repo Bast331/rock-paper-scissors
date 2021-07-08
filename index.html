@@ -7,41 +7,35 @@
     <title>Rock paper scissors</title>
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="styles.css">
-    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fuggles&family=Indie+Flower&family=Tourney:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style> 
 </head>
 <body>
 <nav class="Navigation">
     <div class="Navigation_container">
-        <div class="Navigation_Icon">
-            
+       
+        <div class="Navigation_Title Title_Neon" data-text="Rock Paper Scissors">
+             Rock Paper Scissors
         </div>
-        <div class="Navigation_Title">
-            <div class="Navigation_Title_Item Navigation_Title_Rock">Rock</div>
-            <div class="Navigation_Title_Item Navigation_Title_Paper">Paper</div>
-            <div class="Navigation_Title_Item Navigation_Title_Scissors">Scissors</div>  
-        </div>
-        <div class="Navigation_leer">
-
-        </div>
+        
     </div>
 </nav>
 <div class="StartGame_container">
-    
-     <button class="StartGame_Button">Let's play a Game!</button>
-    
+         <button class="Start_game_Button">Let's play a Game!</button>
 </div>
 
 <div class="Score">
-    
+    <div class="Score_Mobile">Score:</div>
     <div class="Score_You">
         <div class="Score_You_Title Score_Title">
-            You
+            Player
         </div>
         <div class="Score_You_Points Score_Points">
             0
         </div>
     </div>
-    <div class="Score_Title">Score:</div>
+    <div class="Score_Score">Score:</div>
     <div class="Score_PC">
         <div class="Score_PC_Title Score_Title">
         Enemy
@@ -57,19 +51,19 @@
         <div class="Item_Title Rock_Title">
             Rock:
         </div>
-        <img class="Image Image_Rock" src="images/Stein-ohneAbstand.jpg">
+        <img class="Image Image_Rock" src="images/Stein2.png">
     </div>
     <div class="Item Paper">
         <div class="Item_Title Paper_Title">
             Paper:
         </div>
-        <img class="Image Image_Paper" src="images/paper-ohneAbstand.jpg">
+        <img class="Image Image_Paper" src="images/Papier2.png">
     </div>
     <div class="Item Scissors">
         <div class="Item_Title Scissors_Title">
             Scissors:
         </div>
-        <img class="Image Image_Scissors" src="images/schere-ohneAbstand.jpg">
+        <img class="Image Image_Scissors" src="images/Schere2.png">
     </div>
     
 </div>
@@ -78,15 +72,28 @@
 <div class="ResultRound_Text">
 
 </div>
+<div class="ResultRound_Images">
+    <div class="ResultRound_Player">
+
+    </div>
+    VS
+    <div class="ResultRound_Enemy">
+
+    </div>
+</div>
 <button class="Next_Round_Button">Next Round</button>
 
 
 <div class="Champion_Container">
-    <img class="Pokal" src="images/pokal.png">
+    <img class="Pokal" src="images/pokal2.png">
+    <button class="AnotherGame">Play another Game</button>
 </div>
 <div class="Defeat_Container">
-    <img class="Defeat" src="images/lost.png">
+    <img class="Defeat" src="images/defeat2.png">
+    <button class="AnotherGame2">Play another Game</button>
 </div>
+
+
 
 <footer class="Footer">
 
